@@ -15,6 +15,9 @@ public class Main {
                         case "Queen":
                             antMatrixDisplay[line][column] = "Q";
                             break;
+                        case "Worker":
+                            antMatrixDisplay[line][column] = "W";
+                            break;
 
                     }
                 } else {
@@ -35,11 +38,13 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
         Ant[][] colony = new Ant[100][100];
-        System.out.println(colony[0][0]);
         Ant queenAnt = new Queen("Queen Ant");
         ((Queen) queenAnt).setPosition(colony);
+
+        Ant workerAnt1 = new Worker("Worker 1");
+        ((Worker) workerAnt1).setPosition(colony, 12, 0);
         displayAntMatrix(colony);
 
-
+        System.out.println(workerAnt1.getDistanceToQueen(colony, (Queen) queenAnt));
     }
 }

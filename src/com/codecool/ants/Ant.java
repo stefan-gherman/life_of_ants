@@ -1,7 +1,9 @@
 package com.codecool.ants;
 
-public abstract class Ant {
+public abstract class Ant implements Behaviour {
     private String name = "";
+    private int line;
+    private int column;
 
     public Ant() {
         this.name = "Some unknown ant";
@@ -20,6 +22,32 @@ public abstract class Ant {
 
     public void saySomething(String phrase) {
         System.out.println(phrase);
+    }
+
+    public int getLine() {
+        return line;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
+
+    public void setLine(int line) {
+        this.line = line;
+    }
+
+    @Override
+    public void setPosition(Ant[][] antColony) {
+
+    }
+
+    @Override
+    public void setPosition(Ant[][] antColony, int line, int column) {
+
     }
 
     @Override
